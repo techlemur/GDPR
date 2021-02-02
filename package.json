@@ -17,7 +17,8 @@
 				"lint-js-fix": "eslint src/js/ --fix; exit 0",
 				"pot": "wp-pot --src '**/*.php' --dest-file 'languages/gdpr.pot' --domain 'gdpr' --package 'GDPR' ",
 				"precommit": "npm run lint-css && npm run lint-js && npm run pot",
-				"update-deps": "rm -rf node_modules && rm package-lock.json && npm install"
+				"update-deps": "rm -rf node_modules && rm package-lock.json && npm install",
+				"zip": "rm -f GDPR.zip && cd .. && ls -d GDPR/* -I node_modules | grep -v node | xargs zip -r --exclude=@GDPR/zipExclude.conf GDPR/GDPR.zip"
 		},
 		"devDependencies": {
 				"@babel/core": "^7.1.2",
