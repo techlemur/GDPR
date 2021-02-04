@@ -83,7 +83,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/helper-functions.php';
 new GDPR();
 
 /**
- * Add Custom update plugin
+ * Add Custom update plugin @techlemur - 20210204
  */
 if(is_admin()){
 	require 'includes/plugin-update-checker/plugin-update-checker.php';
@@ -95,6 +95,6 @@ if(is_admin()){
 }
 
 /**
- * Add Techlemur php code
+ * Add Techlemur php code @techlemur - 20210204
  */
 require_once 'techlemur.php';
