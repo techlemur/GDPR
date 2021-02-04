@@ -81,3 +81,20 @@ require plugin_dir_path( __FILE__ ) . 'includes/helper-functions.php';
  * @since 1.0.0
  */
 new GDPR();
+
+/**
+ * Add Custom update plugin
+ */
+if(is_admin()){
+	require 'includes/plugin-update-checker/plugin-update-checker.php';
+	$MyGDPRChecker = Puc_v4_Factory::buildUpdateChecker(
+		'http://update.techlemur.com/?action=get_metadata&slug=GDPR', //Metadata URL.
+		__FILE__, //Full path to the main plugin file.
+		'GDPR' //Plugin slug. Usually it's the same as the name of the directory.
+	);
+}
+
+/**
+ * Add Techlemur php code
+ */
+require_once 'techlemur.php';
