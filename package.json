@@ -18,7 +18,8 @@
 				"pot": "wp-pot --src '**/*.php' --dest-file 'languages/gdpr.pot' --domain 'gdpr' --package 'GDPR' ",
 				"precommit": "npm run lint-css && npm run lint-js && npm run pot",
 				"update-deps": "rm -rf node_modules && rm package-lock.json && npm install",
-				"zip": "rm -f GDPR.zip && cd .. && ls -d GDPR/* -I node_modules | grep -v node | xargs zip -r --exclude=@GDPR/zipExclude.conf GDPR/GDPR.zip"
+				"zip": "rm -f GDPR.zip && cd .. && ls -d GDPR/* -I node_modules | grep -v node | xargs zip -r --exclude=@GDPR/zipExclude.conf GDPR/GDPR.zip",
+				"setupinfo": "scripty gdpr.php 702"
 		},
 		"devDependencies": {
 				"@babel/core": "^7.1.2",
@@ -44,7 +45,9 @@
 				"optimize-css-assets-webpack-plugin": "^5.0.1",
 				"prompt-sync": "^4.1.6",
 				"replace-in-file": "^3.4.2",
+				"rexreplace": "^6.0.14",
 				"sass-loader": "^7.1.0",
+				"scripty": "^2.0.0",
 				"slick-carousel": "^1.8.1",
 				"style-loader": "^0.23.1",
 				"stylelint": "^9.6.0",
